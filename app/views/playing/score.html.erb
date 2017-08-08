@@ -1,0 +1,25 @@
+<div class="box">
+<h1>Results</h1>
+<p>Here is your grid :</p>
+
+<table class="center">
+  <tr>
+    <% @grid.each do |letter| %>
+      <td class="letter"><%= letter %></td>
+      <% end %>
+  </tr>
+</table>
+
+<p>Here is your answer :</p>
+<div class="answer center"><%= @attempt %></div>
+
+
+<p>It took you <%= @end_time - @start_time %> seconds to answer </p>
+<p><strong>Conclusion : </strong><%= @result[:message] %></p>
+
+
+<br>
+<div class=class: 'btn-primary'>
+<%= link_to "Play again", '/game' %>
+</div>
+</div>

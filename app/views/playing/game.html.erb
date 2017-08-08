@@ -1,0 +1,21 @@
+<div class="container">
+<div class="box">
+<h1>Let's play</h1>
+<p>New grid</p>
+<table class="center">
+<tr>
+<% @grid.each do |letter| %>
+<td class="letter"><%= letter %></td>
+<% end %>
+</tr>
+</table>
+
+<p>Enter your answer</p>
+<form action="/score" method="get">
+  <input type="text" name="user_input" placeholder="Enter your word">
+  <input type="hidden" value = "<%= @grid.join(" ") %>" name="grid">
+  <input type="hidden" value = "<%= Time.new %>" name="start_time">
+  <input type="submit">
+</form>
+</div>
+</div>
